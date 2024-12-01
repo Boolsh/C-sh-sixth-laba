@@ -20,6 +20,7 @@ namespace lab6._2
         //private int[,] originalMatrix; //переменная для хранения исходной матрицы
         int size;
         int n_str_res;
+        int n_col_res;
         public Form1()
         {
             InitializeComponent();
@@ -118,7 +119,7 @@ namespace lab6._2
                     {
                         for (int i = 0; i < n_str_res; i++)
                         {
-                            for (int j = 0; j < size; j++)
+                            for (int j = 0; j < n_col_res; j++)
                             {
                                 writer.Write(dataGridViewResult.Rows[i].Cells[j].Value.ToString());
                                 if (j < size - 1)
@@ -190,7 +191,7 @@ namespace lab6._2
 
                 // Обновляем количество строк и столбцов
                 n_str_res = mt.GetStr();
-                int newColCount = mt.GetCol();
+                n_col_res = mt.GetCol();
 
                 // Обновляем DataGridView для отображения результата
                 mt.MatrixToGrid(dataGridViewResult);
